@@ -1,6 +1,8 @@
 # STM32 Fan Speed Controller
 # Table of Contents
 [Introduction](https://github.com/Ashrafharuna7/Embedded-Systems#introduction)
+[List of Components used](https://github.com/Ashrafharuna7/Embedded-Systems/blob/main/README.md#list-of-components-used)
+
 ## Introduction
 The aim of this project is to control the speed of a PC fan using **PWM** on an STM32L432KC microcontroller. 
 The fan speed is measured using an in built tachometer.
