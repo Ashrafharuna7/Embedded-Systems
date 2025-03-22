@@ -6,7 +6,9 @@
 
 [Features](https://github.com/Ashrafharuna7/Embedded-Systems/blob/main/README.md#features)
 
-[Circuit Diagram](
+[Circuit Diagram](https://github.com/Ashrafharuna7/Embedded-Systems/blob/main/README.md#circuit-diagram)
+
+
 
 ## Introduction
 The aim of this project is to control the speed of a PC fan using **PWM** on an STM32L432KC microcontroller. 
