@@ -8,6 +8,11 @@
 
 [Circuit Diagram](https://github.com/Ashrafharuna7/Embedded-Systems/blob/main/README.md#circuit-diagram)
 
+[Calculating the RPM](https://github.com/Ashrafharuna7/Embedded-Systems/blob/main/README.md#calculating-the-rpm)
+
+[Troubleshooting Common issues and during the project]
+
+
 
 
 ## Introduction
