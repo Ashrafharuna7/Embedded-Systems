@@ -10,14 +10,15 @@
 
 [Calculating the RPM](https://github.com/Ashrafharuna7/Embedded-Systems/blob/main/README.md#calculating-the-rpm)
 
-[Troubleshooting Common issues and during the project]
+[Troubleshooting Common issues and during the project](https://github.com/Ashrafharuna7/Embedded-Systems/blob/main/README.md#troubleshooting-common-issues-and-during-the-project)
 
 
 
 
 ## Introduction
 The aim of this project is to control the speed of a PC fan using **PWM** on an STM32L432KC microcontroller. 
-The fan speed is measured using an in built tachometer.
+The fan speed is adjusted using a potentiometer, and the RPM is measured using an input captire method to detect signals from he fan's tachometer.
+The project demonstrates real-time speed control and feedback, useful for embedded systems.
 
 ## List of Components used
 - STM32L432KC Microcontroller
@@ -25,6 +26,13 @@ The fan speed is measured using an in built tachometer.
 - Potentiometer
 - 330Ω Pullup resistor
 - 12V Power supply
+
+## Peripherals
+- Digital I/O
+- PWM
+- ADC
+- Serial Communications (UART)
+- Timers
 
 ## Features
 - PA3 is used to control the fan speed using its alternative function **PWM** mode.
@@ -45,7 +53,7 @@ To measure the fan speed, the tachometer signal from the fan was used. When a fa
 ## Troubleshooting Common issues and during the project
 ### No RPM Reading
 **Ensure that the tachometer has a pull-up resistor (around 4.7kΩ or more) connecting to 3.3V.**\
-  While tryng to measure the rpm output, it seemed like some of the readings from the tachometer signal was random. This could be due to not having a sufficient pull-up resistor. The pullup     resistor used was only a value of 330Ω which is normally too low. Adding a higher resistor may have stabalised the readings
+  While tryng to measure the rpm output, it seemed like some of the readings from the tachometer signal was random. This could be due to not having a sufficient pull-up resistor. The pullup     resistor used was only a value of 330Ω which is normally too low. Adding a higher resistor may have stabalised the readings.
   
 **Ensure that PA1 is correctly configured as an input capture pin.**\
   I had issues when trying to read the tachometer signal as PA1 was not configured as an alternative function for timer2. It is important to make sure that PA1 is configured as an alternative   function for timer2 input capture on the correct channel (Channel 2)
@@ -55,7 +63,21 @@ To measure the fan speed, the tachometer signal from the fan was used. When a fa
 A big issue that I faced during this project was the wiring of the potentiometer. I connected the potentiometer to the 12V power supply which damaged my board and required a replacement. It is important to draw a schematic before starting to connect anything to prevent such mistakes.
 
 **Check PWM signal using an oscilloscope**\
-It was a good idea to check the PWM signal using an oscilloscope to verify if changing the duty cycle changed the speed of the fan.
+It was a good idea to check the PWM signal using an oscilloscope to verify if changing the duty cycle changed the speed of the fan.![image](https://github.com/user-attachments/assets/9111bbb5-8c86-491b-bdc1-5145b6e53bfe)
+
+
+## Conclusion
+Overall, the project was successful, and the majority of the implementation worked as expected.
+The PMW control of the fan wasa achieved using Timer 2, and the speed adjustment using the potentiometer was accurately reflected in the PMW duty cycle on the oscilloscope.
+The RPM measurement using input capture on PA1 also functioned, allowing for real-time monitoring of the fan's speed.
+
+However, challenges arose along the way.
+There were issues with measuring the RPM accurately. 
+The fan's tachometer signal required a proper pull-up resistor, which was overlooked, leading to inconsistent readings.
+
+Having tackled these challenges, the objective of the project was successful as it demonstrated PMW-based speed contrl and RPM measurement using an STM32 microcontroller.
+Valuable lessons from debugging signal issues and correctly configuring timers and channels were learned and will be used in future embedded systems projects.
+
 
 
 
